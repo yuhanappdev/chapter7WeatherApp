@@ -41,11 +41,11 @@ const Temperature = Styled.Text`
     font-size: 16px;
 `;
 
-const API_KEY = '';
+const API_KEY = '3490dd2b3b11e867180556773ff25b7a';
 
 const WeatherView = (props) => {
     const [weatherInfo, setWeatherInfo] = useState({
-        temperatrue: undefined,
+        temperature: undefined,
         weather: undefined,
         isLoading: false
     });
@@ -64,7 +64,7 @@ const WeatherView = (props) => {
                 .then(json => {
                     console.log(json)
                     setWeatherInfo({
-                        temperatrue: json.main.temp,
+                        temperature: json.main.temp,
                         weather: json.weather[0].main,
                         isLoading: true
                     });
@@ -119,8 +119,8 @@ const WeatherView = (props) => {
                 }
                 renderItem={({item, index}) => (
                     <WeatherItemContainer>
-                        <Weather>{item.Weather}</Weather>
-                        <Temperature>({item.Temperature} )</Temperature>
+                        <Weather>{item.weather}</Weather>
+                        <Temperature>({item.temperature} )</Temperature>
                     </WeatherItemContainer>
                 )}
                 contentContainerStyle={{ flex: 1 }}
