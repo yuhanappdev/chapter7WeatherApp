@@ -41,7 +41,7 @@ const Temperature = Styled.Text`
     font-size: 16px;
 `;
 
-const API_KEY = '3490dd2b3b11e867180556773ff25b7a';
+const API_KEY = '';
 
 const WeatherView = (props) => {
     const [weatherInfo, setWeatherInfo] = useState({
@@ -97,8 +97,8 @@ const WeatherView = (props) => {
     }, []);
 
     let data = [];
-    const { isLoading, weather, temperatrue} = weatherInfo;
-    if (weather && temperatrue) {
+    const { isLoading, weather, temperature} = weatherInfo;
+    if (weather && temperature) {
         data.push(weatherInfo);
     }
 
